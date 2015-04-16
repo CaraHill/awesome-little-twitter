@@ -9,6 +9,7 @@ end
 post '/signup' do # Handles signup form
   user = User.new(full_name: params[:full_name], username: params[:username], email: params[:email] , password: params[:password])
   if user.save
+    session[:user_id] = user.id
     redirect('/profile')
   else
     redirect('/')
@@ -32,6 +33,17 @@ get '/profile' do # Displays users personal profile
   @tweet = Tweet.where(user_id: session[:user_id])
 
   erb :profile
+
+end
+
+post '/bio_form' do # Handles posting of tweet
+
+  user = User.find(session[:user_id])
+  @bio = params[:bio]
+  user.bio = @bio
+  user.save
+
+  redirect('/profile')
 
 end
 

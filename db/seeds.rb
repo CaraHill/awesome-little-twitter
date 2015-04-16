@@ -8,6 +8,6 @@ User.destroy_all
   email: Faker::Internet.email,
   password: "password",
   bio: Faker::Lorem.paragraph,
-  gravatar_link: Faker::Avatar.image
+  profile_image: Faker::Avatar.image
   )
 end
