@@ -17,9 +17,12 @@ post '/signup' do # Handles signup form
 end
 
 post '/login' do # Handles login form
-
-  redirect('/profile')
-
+  if user = User.authenticate(params[:email], params[:password])
+    session[:user_id] = user.id
+    redirect('/profile')
+  else
+    redirect '/'
+  end
 end
 
 get '/profile' do # Displays users personal profile
