@@ -2,7 +2,9 @@
 
   <h2><%= @current_user.full_name %></h2>
   <h3><%= @current_user.username %></h3>
-  <!-- <img height="200px" width="200px" src="<%#= @current_user.profile_image %>"> -->
+  <% if @current_user.profile_image %>
+    <img height="200px" width="200px" src="<%= @current_user.profile_image %>">
+  <%end%>
 
   <h4>My Bio:</h4>
 
