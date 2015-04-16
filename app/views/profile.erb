@@ -3,7 +3,10 @@
   <h2><%= @current_user.full_name %></h2>
   <h3><%= @current_user.username %></h3>
   <img height="200px" width="200px" src="<%= @current_user.gravatar_link%>">
-
+  <form action="/tweet" method="POST" id="">
+  <input type="text-area" name="username" class="" placeholder="Tweet your status">
+  <input type="submit" value="Tweet it!" class="">
+  </form>
 
 
 
