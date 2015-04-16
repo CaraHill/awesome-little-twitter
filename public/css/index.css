@@ -1,3 +1,4 @@
+
 #signup {
   background-image: rgba(255, 255, 255, 0.7);
   margin-top: 100px;
@@ -41,16 +42,7 @@ user agent stylesheetdiv {
   display: block;
 }
 
-.navbar-brand-centered {
-  position: absolute;
-  left: 50%;
-  display: block;
-  width: 160px;
-  text-align: center;
-  background-color: transparent;
-}
-.navbar>.container .navbar-brand-centered,
-.navbar>.container-fluid .navbar-brand-centered {
-  margin-left: -80px;
+h2 {
+  color: white;
 }
 
