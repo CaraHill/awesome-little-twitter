@@ -55,6 +55,7 @@ end
 get '/users/:id' do # Displays specific users profile page
 
   @current_user = User.find_by(id: params[:id])
+  @tweet = Tweet.where(user_id: params[:id])
   erb :profile
 
 end
