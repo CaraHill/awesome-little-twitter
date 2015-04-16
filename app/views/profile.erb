@@ -4,7 +4,19 @@
   <h3><%= @current_user.username %></h3>
   <img height="200px" width="200px" src="<%= @current_user.gravatar_link%>">
 
-
-
+  <form action="/tweet" method="POST" id="">
+  <textarea name="tweet" class=""></textarea>
+  <input type="submit" value="Tweet it!" class="">
+  </form>
+  <p>Tweets:</p>
+    <% if @tweet %>
+      <% @tweet.each do |item| %>
+        <li> <%= item.tweet %></li>
+      <%end%>
+    <%end%>
+    <form action="/log_out" method="post">
+    Log out:<br>
+    <input type="submit" value="logout">
+  </form>
 
 </div>
