@@ -57,4 +57,9 @@ get '/user/:id' do # Displays specific users profile page
 
 end
 
+post '/log_out' do
+  session.clear
+  redirect '/'
+end
+
 
