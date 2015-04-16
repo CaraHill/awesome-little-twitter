@@ -29,12 +29,18 @@ get '/profile' do # Displays users personal profile
 
   @current_user = User.all.first #TEMPORARY! DELETE WHEN SESSIONS INCLUDED
   # @current_user = User.find(session[:user_id])
+  @tweet = Tweet.all
   erb :profile
 
 end
 
 post '/tweet' do # Handles posting of tweet
 
+  # @tweet = Tweet.create(tweet: params[:tweet])
+  @tweet = Tweet.create(tweet: params[:tweet])
+  user = User.find(session[:user_id])
+  user.tweets << @tweet
+  # @tweet = Tweet.all
   redirect('/profile')
 
 end
