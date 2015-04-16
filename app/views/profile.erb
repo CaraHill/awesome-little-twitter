@@ -2,21 +2,31 @@
 
   <h2><%= @current_user.full_name %></h2>
   <h3><%= @current_user.username %></h3>
-  <img height="200px" width="200px" src="<%= @current_user.gravatar_link%>">
+  <!-- <img height="200px" width="200px" src="<%#= @current_user.profile_image %>"> -->
 
-  <form action="/tweet" method="POST" id="">
-  <textarea name="tweet" class=""></textarea>
-  <input type="submit" value="Tweet it!" class="">
-  </form>
-  <p>Tweets:</p>
-    <% if @tweet %>
-      <% @tweet.each do |item| %>
-        <li> <%= item.tweet %></li>
-      <%end%>
+  <h4>My Bio:</h4>
+
+  <% if @current_user.bio %>
+    <p> <%= @current_user.bio %></p>
+    <form action="/bio_form" method="post">
+      <input type="submit" value="update">
+    </form>
+  <% else %>
+    <%= erb :bio_form %>
+  <%end%>
+
+  <%= erb :tweet_form %>
+
+  <h4>Tweets:</h4>
+
+  <% if @tweet %>
+    <% @tweet.each do |item| %>
+      <li> <%= item.tweet %></li>
     <%end%>
-    <form action="/log_out" method="post">
-    Log out:<br>
-    <input type="submit" value="logout">
+  <%end%>
+
+  <form action="/log_out" method="post">
+    <input type="submit" value="Log out">
   </form>
 
 </div>
