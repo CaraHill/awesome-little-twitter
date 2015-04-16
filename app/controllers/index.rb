@@ -37,7 +37,7 @@ post '/tweet' do # Handles posting of tweet
 end
 
 get '/users' do # List of all users
-
+  @users = User.all
   erb :users
 
 end

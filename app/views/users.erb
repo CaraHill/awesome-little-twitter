@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Little Twitter</h1>
+  <h2>Users Page</h2>
+  <p><% if @users %>
+    <% @users.each do |user| %>
+      <li> <%= "#{user.gravatar_link}, #{user.username}" %>
+            <a href="/users/<%=user.id%>">Go to User Page</a>
+      </li>
+    <%end%>
+  <%end%></p>
+</div>
