@@ -1,9 +1,13 @@
-  <form action="/profile" method="post">
-    <input type="text" placeholder="--full name--" name="full_name">
-    <input type="text" placeholder="--user name--" name="username">
-    <input type="text" placeholder="--email--" name="email">
-    <input type="text" placeholder="--gravatar link--" name="gravatar_link">
-    <textarea  rows="4" cols="50" name="bio">biography</textarea>
-    <input type="password" placeholder="--password--" name="password">
-    <input type="submit" value="login">
-  </form>
+<div class="col-md-6" id="sign-up">
+    <h2>Sign Up</h2>
+        <div class="form-group">
+            <form action="/signup" method="POST" id="signup-form">
+                <p><input type="text" name="fullname" class="form-control" placeholder="Full name"></p><br>
+                <p><input type="text" name="username" class="form-control" placeholder="Username"></p><br>
+                <p><input type="text" name="email" class="form-control" placeholder="Email address"></p><br>
+                <p><input type="password" name="password" class="form-control" placeholder="Password"></p><br>
+                <label><input type="checkbox" name="terms"> I agree with the <a href="#">Terms and Conditions</a>.</label>
+                <input type="submit" value="Sign up" class="btn btn-primary pull-right">
+            </form>
+        </div>
+</div>
