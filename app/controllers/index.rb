@@ -41,7 +41,7 @@ post '/tweet' do # Handles posting of tweet
   @tweet = Tweet.create(tweet: params[:tweet])
   user = User.find(session[:user_id])
   user.tweets << @tweet
-  # @tweet = Tweet.all
+
   redirect('/profile')
 
 end
