@@ -29,7 +29,7 @@ get '/profile' do # Displays users personal profile
 
   @current_user = User.all.first #TEMPORARY! DELETE WHEN SESSIONS INCLUDED
   # @current_user = User.find(session[:user_id])
-  @tweet = Tweet.all
+  @tweet = Tweet.where(user_id: session[:user_id])
   erb :profile
 
 end
