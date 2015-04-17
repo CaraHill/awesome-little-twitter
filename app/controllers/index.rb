@@ -85,8 +85,11 @@ get '/users/:id' do # Displays specific users profile page
 end
 
 post '/follow/:id' do
-  user_to_follow =
+  user_to_follow = User.find(params[:id])
   user = User.find(session[:user_id])
+  user.follow(user_to_follow)
+
+  redirect '/users'
 
 end
 

@@ -19,6 +19,18 @@ class User < ActiveRecord::Base
     encrypt_password
   end
 
+  def follow(user_to_follow)
+    self.users_i_follow << user_to_follow
+  end
+
+  def followers
+    self.my_followers
+  end
+
+  def is_following
+    self.users_i_follow
+  end
+
   def encrypt_password
     self.password = SCrypt::Password.create(password)
   end
