@@ -28,11 +28,14 @@ end
 
 get '/profile' do # Displays users personal profile
 
-  @current_user = User.find(session[:user_id])
-  @own_page = true
-  @tweet = Tweet.where(user_id: session[:user_id])
-
-  erb :profile
+  @current_user = User.find_by_id(session[:user_id])
+  if @current_user
+    @own_page = true
+    @tweet = Tweet.where(user_id: session[:user_id])
+    erb :profile
+  else
+    redirect '/'
+  end
 
 end
 
