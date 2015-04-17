@@ -28,8 +28,8 @@ end
 
 get '/profile' do # Displays users personal profile
 
-
   @current_user = User.find(session[:user_id])
+  @own_page = true
   @tweet = Tweet.where(user_id: session[:user_id])
 
   erb :profile
@@ -69,6 +69,13 @@ end
 get '/users/:id' do # Displays specific users profile page
 
   @current_user = User.find_by(id: params[:id])
+  session_user = User.find(session[:user_id])
+
+  if session_user == @current_user
+    @own_page = true
+  else
+    @own_page = false
+  end
   @tweet = Tweet.where(user_id: params[:id])
   erb :profile
 

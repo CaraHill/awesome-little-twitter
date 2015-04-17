@@ -8,16 +8,18 @@
 
   <h4>My Bio:</h4>
 
-  <% if @current_user.bio %>
-    <p> <%= @current_user.bio %></p>
-    <form action="/bio_form" method="post">
-      <input type="submit" value="update">
-    </form>
-  <% else %>
-    <%= erb :bio_form %>
-  <%end%>
+  <% if @own_page %>
+    <% if @current_user.bio %>
+      <p> <%= @current_user.bio %></p>
+      <form action="/bio_form" method="post">
+        <input type="submit" value="update">
+      </form>
+    <% else %>
+      <%= erb :bio_form %>
+    <%end%>
 
-  <%= erb :tweet_form %>
+    <%= erb :tweet_form %>
+  <% end %>
 
   <h4>Tweets:</h4>
 
