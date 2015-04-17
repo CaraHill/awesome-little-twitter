@@ -93,6 +93,12 @@ post '/follow/:id' do
 
 end
 
+get '/feed' do
+  @user = User.all
+  @feed = Tweet.all
+  erb :feed
+end
+
 post '/log_out' do
   session.clear
   redirect '/'
