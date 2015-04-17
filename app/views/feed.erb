@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Little Twitter</h1>
+  <h2>Tweet Feed</h2>
+  <p><% if @feed %>
+    <% @feed.each do |tweet| %>
+      <li> <%= @user[tweet.user_id].username %>:
+          <%= tweet.tweet %>
+          </li>
+    <%end%>
+  <%end%>
+  </p>
+</div>
