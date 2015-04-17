@@ -72,7 +72,7 @@ end
 get '/users/:id' do # Displays specific users profile page
 
   @current_user = User.find_by(id: params[:id])
-  session_user = User.find(session[:user_id])
+  session_user = User.find_by(id: session[:user_id])
 
   if session_user == @current_user
     @own_page = true
