@@ -12,6 +12,7 @@ require 'shoulda-matchers'
 require 'rack/test'
 require 'capybara'
 require 'capybara/rspec'
+require 'faker'
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods
@@ -20,3 +21,5 @@ end
 def app
   Sinatra::Application
 end
+
+Capybara.app = app
