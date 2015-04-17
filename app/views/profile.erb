@@ -37,20 +37,17 @@
 </div> -->
 <div class="background-image"></div>
 
+<div id='full_container'>
 <div class="nav-bar">
   <%= erb :tweet_form %>
-
-  <h4>Tweets:</h4>
-
+  <br>
   <% if @tweet %>
   <% @tweet.each do |item| %>
-  <li> <%= item.tweet %></li>
+  <div class='message'>
+    <li> <%= item.tweet %></li>
+  </div>
   <%end%>
   <%end%>
-
-  <form action="/log_out" method="post">
-  <input type="submit" value="Log out">
-  </form>
 </div>
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -81,6 +78,9 @@
                       <% else %>
                         <%= erb :bio_form %>
                       <%end%>
+                      <form action="/log_out" method="post">
+                        <input type="submit" value="Log out">
+                      </form>
 
                     </div>
                 </div>
@@ -105,3 +105,4 @@
         </div>
 
   </div>
+</div>
