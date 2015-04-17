@@ -41,6 +41,8 @@ post '/bio_form' do # Handles posting of tweet
   user = User.find(session[:user_id])
   @bio = params[:bio]
   user.bio = @bio
+  @profile_image = params[:profile_image]
+  user.profile_image = @profile_image
   user.save
 
   redirect('/profile')
