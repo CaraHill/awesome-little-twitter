@@ -72,6 +72,12 @@ get '/users/:id' do # Displays specific users profile page
 
 end
 
+post '/follow/:id' do
+  user_to_follow =
+  user = User.find(session[:user_id])
+
+end
+
 post '/log_out' do
   session.clear
   redirect '/'
