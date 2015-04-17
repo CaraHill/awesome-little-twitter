@@ -1,3 +1,4 @@
+<!-- <div class="background-image"></div>
 <div class="container">
 
   <h2><%= @current_user.full_name %></h2>
@@ -31,4 +32,74 @@
     <input type="submit" value="Log out">
   </form>
 
+</div> -->
+<div class="background-image"></div>
+
+<div class="nav-bar">
+  <%= erb :tweet_form %>
+
+  <h4>Tweets:</h4>
+
+  <% if @tweet %>
+  <% @tweet.each do |item| %>
+  <li> <%= item.tweet %></li>
+  <%end%>
+  <%end%>
+
+  <form action="/log_out" method="post">
+  <input type="submit" value="Log out">
+  </form>
 </div>
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 col-sm-6">
+
+            <div class="card hovercard">
+                <div class="cardheader">
+
+                </div>
+                <div class="avatar">
+                    <% if @current_user.profile_image %>
+                        <img height="200px" width="200px" src="<%= @current_user.profile_image %>">
+                    <%end%>
+                </div>
+                <div class="info">
+                    <div class="title">
+                      <h2><%= @current_user.username %></h2>
+                      <h3><%= @current_user.full_name %></h3>
+                    </div>
+                    <div class="desc">
+                      <% if @current_user.bio %>
+                        <p> <%= @current_user.bio %></p>
+                        <form action="/bio_form" method="post">
+                          <input type="submit" value="update">
+                        </form>
+                      <% else %>
+                        <%= erb :bio_form %>
+                      <%end%>
+
+                    </div>
+                </div>
+                <div class="bottom">
+                    <a class="btn btn-primary btn-twitter btn-sm" href="https://twitter.com/webmaniac">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a class="btn btn-danger btn-sm" rel="publisher"
+                       href="https://plus.google.com/+ahmshahnuralam">
+                        <i class="fa fa-google-plus"></i>
+                    </a>
+                    <a class="btn btn-primary btn-sm" rel="publisher"
+                       href="https://plus.google.com/shahnuralam">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a class="btn btn-warning btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam">
+                        <i class="fa fa-behance"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+  </div>
