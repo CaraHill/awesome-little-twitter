@@ -222,7 +222,7 @@ body{
 
 .card {
     padding-top: 20px;
-    margin: 10px 0 20px 0;
+    margin: 83px 0 20px 0;
     background-color: rgba(214, 224, 226, 0.2);
     border-top-width: 0;
     border-bottom-width: 2px;
@@ -464,8 +464,114 @@ body{
 .btn{ border-radius: 50%; width:32px; height:32px; line-height:18px;  }
 
 .nav-bar {
-  width: 200px;
+  position: absolute;
+  left: 35%;
+  top: 7.5%;
+  width: 800px;
   color:black;
   display: inline-block;
 }
 
+----
+
+.tweet{
+  position: absolute;
+  top: calc(40% - 75px);
+  left: calc(40% - 50px);
+  height: 150px;
+  width: 350px;
+  padding: 10px;
+  z-index: 2;
+}
+
+
+.tweet input[type=text]{
+  width: 500px;
+  height: 100px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 2px;
+  color: #fff;
+  font-family: 'Exo', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.tweet input[type=password]{
+  width: 250px;
+  height: 30px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 2px;
+  color: #fff;
+  font-family: 'Exo', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 4px;
+  margin-top: 10px;
+}
+
+.tweet input[type=submit]{
+  width: 250px;
+  height: 35px;
+  background: #fff;
+  border: 1px solid #fff;
+  cursor: pointer;
+  border-radius: 2px;
+  color: #a18d6c;
+  font-family: 'Exo', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 6px;
+  margin-top: 10px;
+}
+
+.tweet input[type=submit]:hover{
+  opacity: 0.8;
+}
+
+.tweet input[type=submit]:active{
+  opacity: 0.6;
+}
+
+.tweet input[type=text]:focus{
+  outline: none;
+  border: 1px solid rgba(255,255,255,0.9);
+}
+
+.tweet input[type=password]:focus{
+  outline: none;
+  border: 1px solid rgba(255,255,255,0.9);
+}
+
+.tweet input[type=submit]:focus{
+  outline: none;
+}
+
+.message li {
+  width: 500px;
+  height: 100px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 2px;
+  color: #fff;
+  font-family: 'Exo', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 5px;
+  margin-top: 10px;
+  list-style: none;
+  padding-top: 40px;
+}
+
+.message {
+  font-size: 1.3em;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+#container {
+  left: 40%;
+}
