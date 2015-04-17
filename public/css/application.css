@@ -1,6 +1,27 @@
-body {
-	background-image: url("../assets/polygon-min.png");
-	background-repeat: no-repeat;
+/*#background-image {
+  background-image: url("http://tomassobekphotography.co.nz/gallery3/var/albums/Tramping/Humpridge-Track-(Jun-2012)/120604_0201.jpg?m=1339312048");
+	-webkit-filter: blur(5px); -moz-filter: blur(5px); -o-filter: blur(5px); -ms-filter: blur(5px); filter: blur(5px);
+  background-repeat: no-repeat;
 	background-size: 100%;
 
+}*/
+
+.background-image {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+
+  display: block;
+  background-image: url("http://tomassobekphotography.co.nz/gallery3/var/albums/Tramping/Humpridge-Track-(Jun-2012)/120604_0201.jpg?m=1339312048");
+  width: 100%;
+  height: 100%;
+
+  -webkit-filter: blur(8px);
+  -moz-filter: blur(8px);
+  -o-filter: blur(8px);
+  -ms-filter: blur(8px);
+  filter: blur(8px);
 }
+
+
